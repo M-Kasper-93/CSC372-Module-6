@@ -1,0 +1,26 @@
+public class ContactList {
+
+//main class with test
+public static void main(String[] args) {
+  String[] names = {"Arnold", "Bobby", "Kevin", "Toby"};
+  System.out.println(contactList(names, "Bobby"));
+}
+//binary search algorithm
+private static int contactList(String[] names, String target) {
+  int low = 0; 
+  int high = names.length - 1;
+
+  while (low <= high) {
+    int middle = (low + high) / 2; 
+    String nameMiddle = names[middle]; 
+    if (nameMiddle.equals(target)) { 
+        return middle; 
+    }
+    if (nameMiddle.compareTo(target) > 0) { 
+        high = middle - 1;
+    } else { 
+        low = middle + 1;
+    }
+    }
+  }
+}
